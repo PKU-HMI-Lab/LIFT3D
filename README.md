@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
   
-[🌐**Project Page**](https://lift3d-web.github.io/) | [✍️**Paper**](??) | [🎥**Demo**](https://lift3d-web.github.io/)
+[🌐**Project Page**](https://lift3d-web.github.io/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2403.18922) | [🎥**Demo**](https://lift3d-web.github.io/)
 
 [Yueru Jia](https://github.com/jiayueru)\*, [Jiaming Liu](https://liujiaming1996.github.io/)\*, [Sixiang Chen](https://lift3d-web.github.io/)*, [Chenyang Gu](https://gaystarc.github.io/), [Zhilue Wang](https://lift3d-web.github.io/), [Longzan Luo](https://luolongzan.github.io/), [Lily Lee](https://lift3d-web.github.io/), 
 
@@ -40,5 +40,13 @@ If you want to see more robot demonstration videos and method introductions, ple
 ## BibTeX
 
 ```bibtex
-??
+@misc{t2024lift3dzeroshotlifting2d,
+      title={Lift3D: Zero-Shot Lifting of Any 2D Vision Model to 3D}, 
+      author={Mukund Varma T and Peihao Wang and Zhiwen Fan and Zhangyang Wang and Hao Su and Ravi Ramamoorthi},
+      year={2024},
+      eprint={2403.18922},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2403.18922}, 
+}
 ```
