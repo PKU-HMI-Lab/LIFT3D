@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
   
-[🌐**Project Page**](https://lift3d-web.github.io/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2403.18922) | [🎥**Demo**](https://lift3d-web.github.io/)
+[🌐**Project Page**](https://lift3d-web.github.io/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2411.18623) | [🎥**Demo**](https://lift3d-web.github.io/)
 
 [Yueru Jia](https://github.com/jiayueru)\*, [Jiaming Liu](https://liujiaming1996.github.io/)\*, [Sixiang Chen](https://lift3d-web.github.io/)*, [Chenyang Gu](https://gaystarc.github.io/), [Zhilue Wang](https://lift3d-web.github.io/), [Longzan Luo](https://luolongzan.github.io/), [Lily Lee](https://lift3d-web.github.io/), 
 
@@ -40,13 +40,13 @@ If you want to see more robot demonstration videos and method introductions, ple
 ## BibTeX
 
 ```bibtex
-@misc{t2024lift3dzeroshotlifting2d,
-      title={Lift3D: Zero-Shot Lifting of Any 2D Vision Model to 3D}, 
-      author={Mukund Varma T and Peihao Wang and Zhiwen Fan and Zhangyang Wang and Hao Su and Ravi Ramamoorthi},
+@misc{jia2024lift3dfoundationpolicylifting,
+      title={Lift3D Foundation Policy: Lifting 2D Large-Scale Pretrained Models for Robust 3D Robotic Manipulation}, 
+      author={Yueru Jia and Jiaming Liu and Sixiang Chen and Chenyang Gu and Zhilue Wang and Longzan Luo and Lily Lee and Pengwei Wang and Zhongyuan Wang and Renrui Zhang and Shanghang Zhang},
       year={2024},
-      eprint={2403.18922},
+      eprint={2411.18623},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2403.18922}, 
+      url={https://arxiv.org/abs/2411.18623}, 
 }
 ```
