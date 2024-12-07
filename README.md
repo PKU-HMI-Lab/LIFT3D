@@ -7,7 +7,7 @@
   
 [🌐**Project Page**](https://lift3d-web.github.io/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2411.18623) | [🎥**Demo**](https://lift3d-web.github.io/)
 
-[Yueru Jia](https://github.com/jiayueru)\*, [Jiaming Liu](https://liujiaming1996.github.io/)\*, [Sixiang Chen](https://lift3d-web.github.io/)*, [Chenyang Gu](https://gaystarc.github.io/), [Zhilue Wang](https://lift3d-web.github.io/), [Longzan Luo](https://luolongzan.github.io/), [Lily Lee](https://lift3d-web.github.io/), 
+[Yueru Jia](https://github.com/jiayueru)\*, [Jiaming Liu](https://liujiaming1996.github.io/)\*, [Sixiang Chen](https://cscsx.github.io/)*, [Chenyang Gu](https://gaystarc.github.io/), [Zhilue Wang](https://lift3d-web.github.io/), [Longzan Luo](https://luolongzan.github.io/), [Lily Lee](https://lift3d-web.github.io/), 
 
 [Pengwei Wang](https://lift3d-web.github.io/), [Renrui Zhang](https://lift3d-web.github.io/), [Zhongyuan Wang](https://lift3d-web.github.io/), [Shanghang Zhang](https://www.shanghangzhang.com)
 
