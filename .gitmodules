@@ -1,0 +1,16 @@
+[submodule "third_party/RLBench"]
+	path = third_party/RLBench
+	url = git@github.com:CSCSX/RLBench.git
+	branch = lift3d
+[submodule "third_party/eai-vc"]
+	path = third_party/eai-vc
+	url = git@github.com:facebookresearch/eai-vc.git
+[submodule "third_party/SPA"]
+	path = third_party/SPA
+	url = git@github.com:HaoyiZhu/SPA.git
+[submodule "lift3d/models/point_next/openpoints"]
+	path = lift3d/models/point_next/openpoints
+	url = git@github.com:jiayueru/openpoints.git
+[submodule "lift3d/models/pointnet/Pointnet_Pointnet2_pytorch"]
+	path = lift3d/models/pointnet/Pointnet_Pointnet2_pytorch
+	url = https://github.com/yanx27/Pointnet_Pointnet2_pytorch.git
