@@ -28,7 +28,7 @@
 
 - **Lift3D Model** 🎯:  Here, we provide the CLIP-vit-base model with MAE pretraining checkpoints.
 
-- **Simulator Benchmark (2D&3D) 📈**: Code for data collection, training, and evaluation using simulators from **Metaworld and Rlbench**. Metaworld are built for the latest version of the gynasim library. You can freely integrate various 2D and 3D encoders under this framework for testing.
+- **Simulator Benchmark (2D&3D) 📈**: Code for data collection, training, and evaluation using simulators from **Metaworld and RLBench**. Metaworld are built for the latest version of the gynasim library. You can freely integrate various 2D and 3D encoders under this framework for testing.
 
 - **2D and 3D Baseline Methods 🛠️**: Provides standard 2D and 3D baseline methods for comparison:
 
@@ -194,7 +194,7 @@ cd ../../../../../..
 You can either manually download the model weights (ViT-B-32.pt and lift3d_clip_base.pth) from [Hugging Face](https://huggingface.co/jiayueru/Lift3d/blob/main/README.md) and place them in `lift3d/models/lift3d/ckpt`, or they will be automatically downloaded for you. In case of automatic download, the weights will be cached in the `lift3d/models/lift3d/ckpt`.
 
 ```python
-# see also scripts\lift3d_example.py
+# see also scripts/lift3d_example.py
 import torch
 from lift3d.models.lift3d.model_loader import lift3d_clip_base
 
@@ -231,7 +231,7 @@ python -m lift3d.scripts.gen_cinematic_rlbench
 
 **2. Generate dataset.**  
 - For Metaworld, datasets for training are directly generated in one script (under `tools`). 
-- For RLbench, you should firstly generate source data and then convert source data to datasets for training.
+- For RLBench, you should firstly generate source data and then convert source data to datasets for training.
 
 ```bash
 # metaworld
