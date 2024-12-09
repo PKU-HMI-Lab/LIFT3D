@@ -15,7 +15,7 @@
 
 
 ![](assets/lift3d_demo.png)
-**Lift3D** is a **3D robotics representation framework** 🤖, that enhances 2D foundation models to develop 3D manipulation policies by improving both implicit and explicit 3D robotic representations.
+**Lift3D** is a **3D robotic manipulation framework** 🤖, that enhances 2D foundation models to develop robust 3D manipulation policies by improving both implicit and explicit 3D robotic representations.
 
 ## ✨ News ✨
 - [2024/12/09] The Lift3D code has been officially released! 🎉 Check it out now for detailed implementation and usage.
