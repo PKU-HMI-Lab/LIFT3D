@@ -52,7 +52,7 @@ class RLBenchActionMode(object):
 class RLBenchObservationConfig(object):
     @staticmethod
     def single_view_config(
-        camera_name: str, image_size: Tuple[int, int] | int, mobile: bool = False
+        camera_name: str, image_size: Tuple[int, int] | int
     ):
         if isinstance(image_size, int):
             image_size = (image_size, image_size)
@@ -212,21 +212,12 @@ class RLBenchEnv(gymnasium.Env):
 
     def get_robot_state(self):
         obs: Observation = self.get_rlbench_env_obs()
-        if "mobile" in self.task_name:
-            base_state = obs.base_2d_pose
-            arm_joint_state = obs.joint_positions
-            arm_pose_state = obs.gripper_pose
-            gripper_state = obs.gripper_open
-            robot_state = np.concatenate(
-                (base_state, arm_joint_state, arm_pose_state, np.array([gripper_state]))
-            )
-        else:
-            arm_joint_state = obs.joint_positions
-            arm_pose_state = obs.gripper_pose
-            gripper_state = obs.gripper_open
-            robot_state = np.concatenate(
-                (arm_joint_state, arm_pose_state, np.array([gripper_state]))
-            )
+        arm_joint_state = obs.joint_positions
+        arm_pose_state = obs.gripper_pose
+        gripper_state = obs.gripper_open
+        robot_state = np.concatenate(
+            (arm_joint_state, arm_pose_state, np.array([gripper_state]))
+        )
 
         return robot_state
 
@@ -574,15 +565,10 @@ class RLBenchEvaluator(Evaluator):
                     action = policy(**input_data)
                 action = action.to("cpu").detach().numpy().squeeze()
 
-                if "mobile" in task_name:
-                    action_base, action_arm, action_gripper = (
-                        action[:3],
-                        action[3:10],
-                        action[10],
-                    )
-                    x, y, z, qw, qx, qy, qz = action_arm
+                if self.rotation_representation == "quaternion":
+                    x, y, z, qw, qx, qy, qz, gripper = action
                     unit_quat = Quaternion.normalize_quaternion([qw, qx, qy, qz])
-                    action_arm = np.array(
+                    action = np.array(
                         [
                             x,
                             y,
@@ -591,48 +577,31 @@ class RLBenchEvaluator(Evaluator):
                             unit_quat[1],
                             unit_quat[2],
                             unit_quat[3],
+                            gripper,
                         ]
                     )
-                    action = np.concatenate(
-                        (action_base, action_arm, np.array([action_gripper]))
+                elif self.rotation_representation == "euler":
+                    x, y, z, roll, pitch, yaw, gripper = action
+                    unit_quat = Rotation.from_euler(
+                        "xyz", [roll, pitch, yaw], degrees=False
+                    ).as_quat(scalar_first=False)
+                    action = np.array(
+                        [
+                            x,
+                            y,
+                            z,
+                            unit_quat[0],
+                            unit_quat[1],
+                            unit_quat[2],
+                            unit_quat[3],
+                            gripper,
+                        ]
                     )
                 else:
-                    if self.rotation_representation == "quaternion":
-                        x, y, z, qw, qx, qy, qz, gripper = action
-                        unit_quat = Quaternion.normalize_quaternion([qw, qx, qy, qz])
-                        action = np.array(
-                            [
-                                x,
-                                y,
-                                z,
-                                unit_quat[0],
-                                unit_quat[1],
-                                unit_quat[2],
-                                unit_quat[3],
-                                gripper,
-                            ]
-                        )
-                    elif self.rotation_representation == "euler":
-                        x, y, z, roll, pitch, yaw, gripper = action
-                        unit_quat = Rotation.from_euler(
-                            "xyz", [roll, pitch, yaw], degrees=False
-                        ).as_quat(scalar_first=False)
-                        action = np.array(
-                            [
-                                x,
-                                y,
-                                z,
-                                unit_quat[0],
-                                unit_quat[1],
-                                unit_quat[2],
-                                unit_quat[3],
-                                gripper,
-                            ]
-                        )
-                    else:
-                        raise ValueError(
-                            f"Invalid rotation representation: {self.rotation_representation}"
-                        )
+                    raise ValueError(
+                        f"Invalid rotation representation: {self.rotation_representation}"
+                    )
+                
                 obs_dict, reward, terminated, truncated, info = self.env.step(action)
                 rewards += reward
                 success = success or bool(reward)

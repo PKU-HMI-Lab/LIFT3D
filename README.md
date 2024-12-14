@@ -236,6 +236,7 @@ python -m lift3d.scripts.gen_cinematic_rlbench
 ```bash
 # metaworld
 python -m lift3d.tools.gen_data_metaworld
+python -m lift3d.scripts.gen_data_metaworld
 
 # rlbench
 python -m rlbench.dataset_generator \
@@ -244,6 +245,7 @@ python -m rlbench.dataset_generator \
     --tasks close_box \
     --episodes_per_task 120
 python -m lift3d.tools.gen_data_rlbench
+python -m lift3d.scripts.gen_data_rlbench
 ```
 
 **3. Train policy.**
