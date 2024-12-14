@@ -146,7 +146,7 @@ cd ../..
 <summary>8. Install the Lift3D package.</summary>
 
 ```bash
-pip install -r requirements.txt
+pip install -e .
 
 # PointNext
 cd lift3d/models/point_next
