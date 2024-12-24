@@ -270,6 +270,11 @@ python scripts/train_metaworld.py
 python scripts/train_rlbench.py
 ```
 
+## 🤖️ Real-world setting
+
+In our real-world setup, we conduct experiments using a Franka Research 3 (FR3) arm, with a static front view captured by an Intel RealSense L515 RGBD camera. Due to the relatively short length of the FR3 gripper fingers, which makes it challenging to perform certain complex tasks, we 3D print and replace the original gripper with a UMI gripper. Our FR3's controller version is 5.6.0, libfranka version is 0.13.3, Franka ROS version is 0.10.0, and Ubuntu version is 20.04 with ROS Noetic. All the videos shown in our demos are based on real-world tests of our proposed model. The FR3 is in a green light state when in execution mode, with the FCI switch set to 'on', as shown in the figure below. If you have any questions about our real-world experiments, feel free to ask.
+![](assets/fr3.png)
+
 ## 📜️ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
