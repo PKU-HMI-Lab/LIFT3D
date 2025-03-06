@@ -18,6 +18,8 @@
 **Lift3D** is a **3D robotic manipulation framework** 🤖, that enhances 2D foundation models to develop robust 3D manipulation policies by improving both implicit and explicit 3D robotic representations.
 
 ## ✨ News ✨
+- [2025/02/26] Lift3D is accepted by CVPR 2025! 🎉 Stay tuned for more updates!
+
 - [2024/12/09] The Lift3D code has been officially released! 🎉 Check it out now for detailed implementation and usage.
 
 - [2024/11/27] Lift3D is now live on arXiv! 🚀 
