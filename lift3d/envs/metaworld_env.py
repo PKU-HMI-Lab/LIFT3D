@@ -7,7 +7,7 @@ import tqdm
 from gymnasium import Wrapper
 from gymnasium.envs.mujoco.mujoco_env import MujocoEnv
 from gymnasium.envs.mujoco.mujoco_rendering import MujocoRenderer
-from metaworld.envs import ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE
+from metaworld import ALL_V3_ENVIRONMENTS_GOAL_OBSERVABLE
 from metaworld.policies import *
 from scipy.spatial.transform import Rotation
 from termcolor import colored
@@ -21,11 +21,11 @@ from lift3d.helpers.mujoco import camera_name_to_id, generate_point_cloud
 
 def load_mw_policy(task_name):
     if task_name == "peg-insert-side":
-        agent = SawyerPegInsertionSideV2Policy()
+        agent = SawyerPegInsertionSideV3Policy()
     else:
         task_name = task_name.split("-")
         task_name = [s.capitalize() for s in task_name]
-        task_name = "Sawyer" + "".join(task_name) + "V2Policy"
+        task_name = "Sawyer" + "".join(task_name) + "V3Policy"
         agent = eval(task_name)()
     return agent
 
@@ -110,8 +110,8 @@ class MetaWorldEnv(gymnasium.Env):
 
         # task_name
         self.task_name = task_name
-        self.env: MujocoEnv = ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE[
-            f"{task_name}-v2-goal-observable"
+        self.env: MujocoEnv = ALL_V3_ENVIRONMENTS_GOAL_OBSERVABLE[
+            f"{task_name}-v3-goal-observable"
         ]()
 
         # Language
